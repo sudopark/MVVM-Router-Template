@@ -1,5 +1,5 @@
 # MVVM-Router-Template
-
+Scene module generator focused on simplicity and efficiency 🤪
 
 
 ## install
