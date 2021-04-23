@@ -11,24 +11,29 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-import Domain
+
+// MARK: - ___VARIABLE_sceneName___Scene
+
+public protocol ___VARIABLE_sceneName___Scene: Scenable { }
 
 
-// MARK: - ___VARIABLE_TableViewModule___ViewController
+// MARK: - ___VARIABLE_sceneName___ViewController
 
-public final class ___VARIABLE_sceneName___ViewController: BaseViewController {
+public final class ___VARIABLE_sceneName___ViewController: BaseViewController, ___VARIABLE_sceneName___Scene {
     
     private let viewModel: ___VARIABLE_sceneName___ViewModel
-    private let router: ___VARIABLE_sceneName___Router
     
-    public init(viewModel: ___VARIABLE_sceneName___ViewModel, router: ___VARIABLE_sceneName___Router) {
+    public init(viewModel: ___VARIABLE_sceneName___ViewModel) {
         self.viewModel = viewModel
-        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        LeakDetector.instance.expectDeallocate(object: self.viewModel)
     }
     
     public override func loadView() {
@@ -54,7 +59,7 @@ extension ___VARIABLE_sceneName___ViewController {
 
 // MARK: - setup presenting
 
-extension ___VARIABLE_sceneName___ViewController: PresentSetup {
+extension ___VARIABLE_sceneName___ViewController: Presenting {
     
     
     public func setupLayout() {

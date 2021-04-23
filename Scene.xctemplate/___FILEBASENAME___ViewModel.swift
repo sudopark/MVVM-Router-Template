@@ -11,12 +11,10 @@ import Foundation
 import RxSwift
 import RxRelay
 
-import Domain
-
 
 // MARK: - ___VARIABLE_sceneName:identifier___ViewModel
 
-public protocol ___VARIABLE_sceneName___ViewModel {
+public protocol ___VARIABLE_sceneName___ViewModel: class {
 
     // interactor
     
@@ -26,8 +24,19 @@ public protocol ___VARIABLE_sceneName___ViewModel {
 
 // MARK: - ___VARIABLE_sceneModuleName___ViewModel
 
-public final class ___VARIABLE_sceneName___ViewModelImple: BaseViewModel, ___VARIABLE_sceneName___ViewModel {
+public final class ___VARIABLE_sceneName___ViewModelImple: ___VARIABLE_sceneName___ViewModel {
     
+    public let router: ___VARIABLE_sceneName___Routing
+    
+    public init(router: ___VARIABLE_sceneName___Routing) {
+        self.router = router
+    }
+    
+    deinit {
+        LeakDetector.instance.expectDeallocate(object: self.router)
+    }
+    
+    private let disposeBag = DisposeBag()
 }
 
 

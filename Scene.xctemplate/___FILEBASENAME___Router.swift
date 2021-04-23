@@ -9,32 +9,19 @@
 import UIKit
 
 
-// MARK: - Builder + DI Container Extension
+// MARK: - Routing
 
-public protocol ___VARIABLE_sceneName___Building: Buildable {
-    
-    func make___VARIABLE_sceneName___Scene() -> Presentable
-}
-
-extension DIContainers: ___VARIABLE_sceneName___Building {
-    
-    public func make___VARIABLE_sceneName___Scene() -> Presentable {
-        return EmptyViewController()
-    }
-}
-
+public protocol ___VARIABLE_sceneName___Routing: Routing { }
 
 // MARK: - Routers
 
-public typealias ___VARIABLE_sceneName___RouterBuilders = EmptyBuilder
+// TODO: compose next Scene Builders protocol
+public typealias ___VARIABLE_sceneName___Builders = EmptyBuilder
 
-public final class ___VARIABLE_sceneName___Router: Router<___VARIABLE_sceneName___RouterBuilders> {
-        
+public final class ___VARIABLE_sceneName___Router: Router<___VARIABLE_sceneName___Builders>, ___VARIABLE_sceneName___Routing { }
+
+
+extension ___VARIABLE_sceneName___Router {
     
-    public override func route(to scene: Scene, from context: Presentable?) {
-        
-        switch scene {
-        default: break
-        }
-    }
+    // ___VARIABLE_sceneName___Routing implements
 }
