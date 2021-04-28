@@ -8,6 +8,8 @@
 
 import UIKit
 
+import CommonPresenting
+
 
 // MARK: - Builder + DI Container Extension
 
