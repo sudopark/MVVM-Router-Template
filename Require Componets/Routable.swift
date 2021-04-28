@@ -1,6 +1,6 @@
 //
 //  Routable.swift
-//  BreadRoadApp
+//  MVVM-Router-Template
 //
 //  Created by ParkHyunsoo on 2021/04/22.
 //  Copyright © 2021 ParkHyunsoo. All rights reserved.
@@ -12,18 +12,14 @@ import RxSwift
 
 // MARK: Routing and Router
 
-public protocol Routing: class { }
+public protocol Routing: AnyObject { }
 
-open class Router<Buildable>: Routing {
+open class Router<Buildables>: Routing {
     
-    public final let nextSceneBuilders: Buildable?
+    public final let nextScenesBuilder: Buildables?
     public weak var currentScene: Scenable?
     
-    public init(nextSceneBuilders: Buildable) {
-        self.nextSceneBuilders = nextSceneBuilders
-    }
-    
-    public init() where Buildable == EmptyBuilder {
-        self.nextSceneBuilders = nil
+    public init(nextSceneBuilders: Buildables) {
+        self.nextScenesBuilder = nextSceneBuilders
     }
 }

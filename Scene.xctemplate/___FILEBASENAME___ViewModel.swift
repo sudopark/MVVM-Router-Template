@@ -14,7 +14,7 @@ import RxRelay
 
 // MARK: - ___VARIABLE_sceneName:identifier___ViewModel
 
-public protocol ___VARIABLE_sceneName___ViewModel: class {
+public protocol ___VARIABLE_sceneName___ViewModel: AnyObject {
 
     // interactor
     
@@ -26,7 +26,13 @@ public protocol ___VARIABLE_sceneName___ViewModel: class {
 
 public final class ___VARIABLE_sceneName___ViewModelImple: ___VARIABLE_sceneName___ViewModel {
     
-    public let router: ___VARIABLE_sceneName___Routing
+    fileprivate final class Subjects {
+        // define subjects
+    }
+    
+    private let router: ___VARIABLE_sceneName___Routing
+    private let subjects = Subjects()
+    private let disposeBag = DisposeBag()
     
     public init(router: ___VARIABLE_sceneName___Routing) {
         self.router = router
@@ -35,8 +41,6 @@ public final class ___VARIABLE_sceneName___ViewModelImple: ___VARIABLE_sceneName
     deinit {
         LeakDetector.instance.expectDeallocate(object: self.router)
     }
-    
-    private let disposeBag = DisposeBag()
 }
 
 

@@ -1,5 +1,5 @@
 //
-//  DIContainers.swift
+//  EmptyBuilder.swift
 //  MVVM-Router-Template
 //
 //  Created by ParkHyunsoo on 2021/04/23.
@@ -8,12 +8,4 @@
 
 import Foundation
 
-
-// MARK: - DIContainers
-
-public final class DIContainers {
-    
-    
-}
-
-extension DIContainers: EmptyBuilder { }
+public protocol EmptyBuilder { }

@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - Builder + DI Container Extension
 
-public protocol ___VARIABLE_sceneName___SceneBuilable: Buildable {
+public protocol ___VARIABLE_sceneName___SceneBuilable {
     
     func make___VARIABLE_sceneName___Scene() -> ___VARIABLE_sceneName___Scene
 }
