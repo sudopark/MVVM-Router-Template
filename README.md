@@ -12,6 +12,8 @@ sudo swift install.swift
 
 ## Generated files
 
+1. **YourSceneName**Scene: conforms Scenable and represents UIViewController
+
 1. **YourSceneName**Builder
 
    - **YourSceneName**Builder: makes **YourSceneName**Scene
@@ -26,136 +28,27 @@ sudo swift install.swift
 
 3. **YourSceneName**ViewController
 
-   - **YourSceneName**Scene: Conforms Scenable and represents UIViewController)
+   - **YourSceneName**ViewController: conforms **YourSceneName**Scene
    - **YourSceneName**ViewController: owns **YourSceneName**ViewModel
+   - (optional) provide **YourSceneName**Scene Interactor, Presenter or Interactor & Presenter
 
 4. **YourSceneName**ViewModel
-
    - owns **YourSceneName**Router and send message
+   - (optional) conform **YourSceneName**Scene Interactor, Presenter
 
      
 
 ## Example
 
-- FirstScene -> Second or FianlScene
-- SecondScene -> FinalScene
-- FinalScene -> x
+- [Example Project](https://github.com/sudopark/MVVM-Router-Template/tree/master/Example/TemplateExample)
+- ApplicationRouter -> Make and route to MainScene
+- MainScene
+    -  Route to RandomNumberScene + subscribe RandomNumberScenePresenter.newRandNumber
+    -  Route to EmptyFinalScene
+- RandomNumberScene
+    -  make random number and present
+- FinalScene -> do nothing
 
-#### FinalScene
-
-```swift
-// Builder
-public protocol FinalSceneBuilable {
-    func makeFinalScene() -> FinalScene
-}
-extension DIContainers: FinalSceneBuilable {
-    public func makeFinalScene() -> FinalScene {...}
-}
-
-// Router
-public protocol FinalRouting: Routing { }
-public typealias FinalBuilders = EmptyBuilder
-public final class FinalRouter: Router<FinalBuilders>: FinalRouting { }
-
-// Scene + ViewController
-public protocol FinalScene: Scenable { }
-public final class FinalViewController: BaseViewController, FinalSceneMainTabScene { ... }
-
-// ViewModel
-public protocol FinalViewModel: AnyObject {
-public final class FinalViewModelImple: FinalViewModel { ... }
-
-```
-
-#### SecondScene
-
-```swift
-// Builder
-public protocol SecondSceneBuilable {
-    func makeSecondScene() -> SecondScene
-}
-extension DIContainers: SecondSceneBuilable {
-    public func makeSecondScene() -> SecondScene { ... }
-}
-
-// Router
-public protocol SecondRouting: Routing {
-    func routeToFinalScene()
-}
-public typealias SecondRouterBuildables = FinalSceneBuilable
-public final class SecondRouter: Router<SecondRouterBuildables>, SecondRouting {
-    public func routeToFinalScene() {
-        guard let finalScene = self.nextScenesBuilder?.makeFinalScene() else { return }
-        self.currentScene?.present(finalScene, animated: true, completion: nil)
-    }
-}
-
-// Scene + ViewController
-public protocol SecondScene: Scenable { }
-public final class SecondViewController: BaseViewController, SecondScene { ... }
-
-// ViewModel
-public protocol SecondViewModel: AnyObject { }
-public final class SecondViewModelImple: SecondViewModel {
-    private let router: DetailRouting
-    public init(router: SecondRouting) {
-        self.router = router
-        
-        // test
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.router.routeToFinalScene()
-        }
-    }
-}
-
-```
-
-#### FirstScene
-
-```swift
-// Builder
-public protocol FirstSceneBuilable {
-    func makeFirstScene() -> FirstScene
-}
-extension DIContainers: FirstSceneBuilable {
-    public func makeFirstScene() -> FirstScene {...}
-}
-
-// Router
-public protocol FirstRouting: Routing {
-    func routeToSecondScene()
-    func routeToFinalScene()
-}
-public typealias FirstRouterBuildables = SecondSceneBuilable & FinalSceneBuilable
-public final class FirstRouter: Router<FirstRouterBuildables>, FirstRouting {
-    public func routeToSecondScene() {
-        guard let secondScene = self.nextScenesBuilder?.makeSecondScene() else { return }
-        self.currentScene?.present(secondScene, animated: true, completion: nil)
-    }
-
-    public func routeToFinalScene() {
-        guard let finalScene = self.nextScenesBuilder?.makeSecondScene() else { return }
-        self.currentScene?.present(finalScene, animated: true, completion: nil)
-    }
-}
-
-// Scene + ViewController
-public protocol FirstScene: Scenable { }
-public final class FirstViewController: BaseViewController, FirstScene { ... }
-
-// ViewModel
-public protocol FirstViewModel: AnyObject { }
-public final class FirstViewModelImple: FirstViewModel {
-    private let router: FirstRouting
-    public init(router: FirstRouting) {
-        self.router = router
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.router.routeToSecondScene()
-        }
-    }
-}
-```
 
 ## Requirements
 
