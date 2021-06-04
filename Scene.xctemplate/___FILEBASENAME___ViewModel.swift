@@ -22,17 +22,11 @@ public protocol ___VARIABLE_sceneName___ViewModel: AnyObject {
 }
 
 
-// MARK: - ___VARIABLE_sceneModuleName___ViewModel
+// MARK: - ___VARIABLE_sceneName:identifier___ViewModelImple
 
 public final class ___VARIABLE_sceneName___ViewModelImple: ___VARIABLE_sceneName___ViewModel {
     
-    fileprivate final class Subjects {
-        // define subjects
-    }
-    
     private let router: ___VARIABLE_sceneName___Routing
-    private let subjects = Subjects()
-    private let disposeBag = DisposeBag()
     
     public init(router: ___VARIABLE_sceneName___Routing) {
         self.router = router
@@ -41,17 +35,24 @@ public final class ___VARIABLE_sceneName___ViewModelImple: ___VARIABLE_sceneName
     deinit {
         LeakDetector.instance.expectDeallocate(object: self.router)
     }
+    
+    fileprivate final class Subjects {
+        
+    }
+    
+    private let subjects = Subjects()
+    private let disposeBag = DisposeBag()
 }
 
 
-// MARK: - ___VARIABLE_sceneModuleName___ViewModel Interactor
+// MARK: - ___VARIABLE_sceneName:identifier___ViewModelImple Interactor
 
 extension ___VARIABLE_sceneName___ViewModelImple {
     
 }
 
 
-// MARK: - ___VARIABLE_sceneModuleName___ViewModel Presenter
+// MARK: - ___VARIABLE_sceneName:identifier___ViewModelImple Presenter
 
 extension ___VARIABLE_sceneName___ViewModelImple {
     

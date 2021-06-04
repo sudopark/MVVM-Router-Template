@@ -12,16 +12,11 @@ import RxSwift
 import RxCocoa
 
 
-// MARK: - ___VARIABLE_sceneName___Scene
-
-public protocol ___VARIABLE_sceneName___Scene: Scenable { }
-
-
 // MARK: - ___VARIABLE_sceneName___ViewController
 
 public final class ___VARIABLE_sceneName___ViewController: BaseViewController, ___VARIABLE_sceneName___Scene {
     
-    private let viewModel: ___VARIABLE_sceneName___ViewModel
+    let viewModel: ___VARIABLE_sceneName___ViewModel
     
     public init(viewModel: ___VARIABLE_sceneName___ViewModel) {
         self.viewModel = viewModel
@@ -44,6 +39,7 @@ public final class ___VARIABLE_sceneName___ViewController: BaseViewController, _
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        self.bind()
     }
     
 }

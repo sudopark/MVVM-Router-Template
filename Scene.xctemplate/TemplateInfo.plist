@@ -34,13 +34,13 @@
 		</dict>
 		<dict>
 			<key>Default</key>
-			<string>___VARIABLE_sceneName:identifier___ViewController</string>
+			<string>___VARIABLE_sceneName:identifier___Scene</string>
 			<key>Description</key>
-			<string>The view controller name</string>
+			<string>The Scene name</string>
 			<key>Identifier</key>
-			<string>viewControllerName</string>
+			<string>sceneFileName</string>
 			<key>Name</key>
-			<string>View Controller Name:</string>
+			<string>Scene Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
@@ -69,6 +69,20 @@
 			<string>viewModelName</string>
 			<key>Name</key>
 			<string>ViewModel Name:</string>
+			<key>Required</key>
+			<true/>
+			<key>Type</key>
+			<string>static</string>
+		</dict>
+		<dict>
+			<key>Default</key>
+			<string>___VARIABLE_sceneName:identifier___ViewController</string>
+			<key>Description</key>
+			<string>The view controller name</string>
+			<key>Identifier</key>
+			<string>viewControllerName</string>
+			<key>Name</key>
+			<string>View Controller Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
