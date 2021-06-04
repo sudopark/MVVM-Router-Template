@@ -23,9 +23,9 @@ import RxCocoa
 
 public protocol EmptyFinalScene: Scenable {
     
-//    var sceneInteractor: EmptyFinalSceneInteractor? { get }
+//    var interactor: EmptyFinalSceneInteractor? { get }
 //
-//    var scenePresenrer: EmptyFinalScenePresenter? { get }
+//    var presenter: EmptyFinalScenePresenter? { get }
 }
 
 
@@ -43,11 +43,11 @@ public protocol EmptyFinalScene: Scenable {
 
 //extension EmptyFinalViewController {
 //
-//    public var sceneInteractor: EmptyFinalSceneInteractor? {
+//    public var interactor: EmptyFinalSceneInteractor? {
 //        return self.viewModel as? EmptyFinalSceneInteractor
 //    }
 //
-//    public var scenePresenrer: EmptyFinalScenePresenter? {
+//    public var presenter: EmptyFinalScenePresenter? {
 //        return self.viewModel as? EmptyFinalScenePresenter
 //    }
 //}

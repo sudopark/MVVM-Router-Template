@@ -23,9 +23,9 @@ import RxCocoa
 
 public protocol ___VARIABLE_sceneName___Scene: Scenable {
     
-//    var sceneInteractor: ___VARIABLE_sceneName___SceneInteractor? { get }
+//    var interactor: ___VARIABLE_sceneName___SceneInteractor? { get }
 //
-//    var scenePresenrer: ___VARIABLE_sceneName___ScenePresenter? { get }
+//    var presenter: ___VARIABLE_sceneName___ScenePresenter? { get }
 }
 
 
@@ -43,11 +43,11 @@ public protocol ___VARIABLE_sceneName___Scene: Scenable {
 
 //extension ___VARIABLE_sceneName___ViewController {
 //
-//    public var sceneInteractor: ___VARIABLE_sceneName___SceneInteractor? {
+//    public var interactor: ___VARIABLE_sceneName___SceneInteractor? {
 //        return self.viewModel as? ___VARIABLE_sceneName___SceneInteractor
 //    }
 //
-//    public var scenePresenrer: ___VARIABLE_sceneName___ScenePresenter? {
+//    public var presenter: ___VARIABLE_sceneName___ScenePresenter? {
 //        return self.viewModel as? ___VARIABLE_sceneName___ScenePresenter
 //    }
 //}

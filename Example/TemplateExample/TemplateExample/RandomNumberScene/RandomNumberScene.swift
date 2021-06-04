@@ -26,9 +26,9 @@ public protocol RandomNumberScenePresenter {
 
 public protocol RandomNumberScene: Scenable {
     
-//    var sceneInteractor: RandomNumberSceneInteractor? { get }
+//    var interactor: RandomNumberSceneInteractor? { get }
 //
-    var scenePresenrer: RandomNumberScenePresenter? { get }
+    var presenter: RandomNumberScenePresenter? { get }
 }
 
 
@@ -44,11 +44,11 @@ extension RandomNumberViewModelImple: RandomNumberScenePresenter { }
 
 extension RandomNumberViewController {
 
-//    public var sceneInteractor: RandomNumberSceneInteractor? {
+//    public var interactor: RandomNumberSceneInteractor? {
 //        return self.viewModel as? RandomNumberSceneInteractor
 //    }
 
-    public var scenePresenrer: RandomNumberScenePresenter? {
+    public var presenter: RandomNumberScenePresenter? {
         return self.viewModel as? RandomNumberScenePresenter
     }
 }

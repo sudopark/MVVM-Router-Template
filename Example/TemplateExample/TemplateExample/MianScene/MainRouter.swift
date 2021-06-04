@@ -38,7 +38,7 @@ extension MainRouter {
     public func showRandomNumber() -> RandomNumberScenePresenter? {
         guard let RandomNumberScene = self.nextScenesBuilder?.makeRandomNumberScene() else { return nil }
         self.currentScene?.present(RandomNumberScene, animated: true, completion: nil)
-        return RandomNumberScene.scenePresenrer
+        return RandomNumberScene.presenter
     }
     
     public func showEmptyScene(_ params: String) {

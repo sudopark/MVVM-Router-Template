@@ -23,9 +23,9 @@ import RxCocoa
 
 public protocol MainScene: Scenable {
     
-//    var sceneInteractor: MainSceneInteractor { get }
+//    var ineteractor: MainSceneInteractor { get }
 //
-//    var scenePresenrer: MainScenePresenter { get }
+//    var presenter: MainScenePresenter { get }
 }
 
 
@@ -43,11 +43,11 @@ public protocol MainScene: Scenable {
 
 //extension MainViewController {
 //
-//    public var sceneInteractor: MainSceneInteractor {
+//    public var ineteractor: MainSceneInteractor {
 //        return self.viewModel
 //    }
 //
-//    public var scenePresenrer: MainScenePresenter {
+//    public var presenter: MainScenePresenter {
 //        return self.viewModel
 //    }
 //}
