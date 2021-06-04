@@ -11,8 +11,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-import CommonPresenting
-
 
 // MARK: - ___VARIABLE_sceneName___ViewController
 

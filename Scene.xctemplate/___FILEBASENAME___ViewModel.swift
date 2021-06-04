@@ -11,7 +11,6 @@ import Foundation
 import RxSwift
 import RxRelay
 
-import Domain
 
 // MARK: - ___VARIABLE_sceneName:identifier___ViewModel
 
