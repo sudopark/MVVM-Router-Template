@@ -9,17 +9,17 @@
 import Foundation
 
 
-// MARK: - DIContainers
+// MARK: - DependencyInjector
 
-public final class DIContainers {
+public final class DependencyInjector {
     
     
 }
 
-extension DIContainers: EmptyBuilder { }
+extension DependencyInjector: EmptyBuilder { }
 
 
-extension DIContainers {
+extension DependencyInjector {
     
     public var randomNumberRepository: RandomNumberRepository {
         

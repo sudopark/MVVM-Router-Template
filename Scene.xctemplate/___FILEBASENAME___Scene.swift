@@ -12,20 +12,20 @@ import RxSwift
 import RxCocoa
 
 
-// MARK: - ___VARIABLE_sceneName___Scene Interactor & Presenter
+// MARK: - ___VARIABLE_sceneName___Scene Input & Output
 
-//public protocol ___VARIABLE_sceneName___SceneInteractor { }
+//public protocol ___VARIABLE_sceneName___SceneInput { }
 //
-//public protocol ___VARIABLE_sceneName___ScenePresenter { }
+//public protocol ___VARIABLE_sceneName___SceneOutput { }
 
 
 // MARK: - ___VARIABLE_sceneName___Scene
 
 public protocol ___VARIABLE_sceneName___Scene: Scenable {
     
-//    var interactor: ___VARIABLE_sceneName___SceneInteractor? { get }
+//    var input: ___VARIABLE_sceneName___SceneInput? { get }
 //
-//    var presenter: ___VARIABLE_sceneName___ScenePresenter? { get }
+//    var output: ___VARIABLE_sceneName___SceneOutput? { get }
 }
 
 
@@ -43,11 +43,11 @@ public protocol ___VARIABLE_sceneName___Scene: Scenable {
 
 //extension ___VARIABLE_sceneName___ViewController {
 //
-//    public var interactor: ___VARIABLE_sceneName___SceneInteractor? {
+//    public var input: ___VARIABLE_sceneName___SceneInput? {
 //        return self.viewModel as? ___VARIABLE_sceneName___SceneInteractor
 //    }
 //
-//    public var presenter: ___VARIABLE_sceneName___ScenePresenter? {
+//    public var output: ___VARIABLE_sceneName___SceneOutput? {
 //        return self.viewModel as? ___VARIABLE_sceneName___ScenePresenter
 //    }
 //}

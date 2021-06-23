@@ -57,7 +57,7 @@ extension MainViewModelImple {
         self.bindRandomNumberScenPresentEvent(RandomNumberPresenter)
     }
     
-    private func bindRandomNumberScenPresentEvent(_ presenter: RandomNumberScenePresenter) {
+    private func bindRandomNumberScenPresentEvent(_ presenter: RandomNumberSceneOutput) {
         
         presenter.newRandNumber
             .subscribe(onNext: { number in

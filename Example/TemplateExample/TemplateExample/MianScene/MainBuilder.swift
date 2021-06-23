@@ -22,7 +22,7 @@ public protocol MainSceneBuilable {
 }
 
 
-extension DIContainers: MainSceneBuilable {
+extension DependencyInjector: MainSceneBuilable {
     
     public func makeMainScene() -> MainScene {
         let router = MainRouter(nextSceneBuilders: self)

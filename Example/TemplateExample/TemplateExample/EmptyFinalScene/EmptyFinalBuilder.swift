@@ -22,7 +22,7 @@ public protocol EmptyFinalSceneBuilable {
 }
 
 
-extension DIContainers: EmptyFinalSceneBuilable {
+extension DependencyInjector: EmptyFinalSceneBuilable {
     
     public func makeEmptyFinalScene(_ params: String) -> EmptyFinalScene {
         let router = EmptyFinalRouter(nextSceneBuilders: self)

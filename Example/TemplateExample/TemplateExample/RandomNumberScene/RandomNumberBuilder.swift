@@ -22,7 +22,7 @@ public protocol RandomNumberSceneBuilable {
 }
 
 
-extension DIContainers: RandomNumberSceneBuilable {
+extension DependencyInjector: RandomNumberSceneBuilable {
     
     public func makeRandomNumberScene() -> RandomNumberScene {
         let router = RandomNumberRouter(nextSceneBuilders: self)

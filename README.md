@@ -17,7 +17,7 @@ sudo swift install.swift
 1. **YourSceneName**Builder
 
    - **YourSceneName**Builder: makes **YourSceneName**Scene
-   - extend DIContainers to conform **YourSceneName**Builder and implement **YourSceneName**Scene making as default
+   - extend DependencyInjector to conform **YourSceneName**Builder and implement **YourSceneName**Scene making as default
 
 2. **YourSceneName**Router
 
@@ -34,7 +34,7 @@ sudo swift install.swift
 
 4. **YourSceneName**ViewModel
    - owns **YourSceneName**Router and send message
-   - (optional) conform **YourSceneName**Scene Interactor, Presenter
+   - (optional) conform **YourSceneName**Scene Input, Output
 
      
 

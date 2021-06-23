@@ -9,7 +9,7 @@
 import UIKit
 
 
-// MARK: - Builder + DI Container Extension
+// MARK: - Builder + DependencyInjector Extension
 
 public protocol ___VARIABLE_sceneName___SceneBuilable {
     
@@ -17,7 +17,7 @@ public protocol ___VARIABLE_sceneName___SceneBuilable {
 }
 
 
-extension DIContainers: ___VARIABLE_sceneName___SceneBuilable {
+extension DependencyInjector: ___VARIABLE_sceneName___SceneBuilable {
     
     public func make___VARIABLE_sceneName___Scene() -> ___VARIABLE_sceneName___Scene {
         let router = ___VARIABLE_sceneName___Router(nextSceneBuilders: self)

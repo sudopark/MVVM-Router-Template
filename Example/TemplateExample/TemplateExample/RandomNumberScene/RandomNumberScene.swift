@@ -12,11 +12,11 @@ import RxSwift
 import RxCocoa
 
 
-// MARK: - RandomNumberScene Interactor & Presenter
+// MARK: - RandomNumberScene Input & Output
 
-//public protocol RandomNumberSceneInteractor { }
+//public protocol RandomNumberSceneInput { }
 //
-public protocol RandomNumberScenePresenter {
+public protocol RandomNumberSceneOutput {
     
     var newRandNumber: Observable<Int> { get }
 }
@@ -26,9 +26,9 @@ public protocol RandomNumberScenePresenter {
 
 public protocol RandomNumberScene: Scenable {
     
-//    var interactor: RandomNumberSceneInteractor? { get }
+//    var input: RandomNumberSceneInput? { get }
 //
-    var presenter: RandomNumberScenePresenter? { get }
+    var output: RandomNumberSceneOutput? { get }
 }
 
 
@@ -38,7 +38,7 @@ public protocol RandomNumberScene: Scenable {
 //
 //}
 //
-extension RandomNumberViewModelImple: RandomNumberScenePresenter { }
+extension RandomNumberViewModelImple: RandomNumberSceneOutput { }
 
 // MARK: - RandomNumberViewController provide RandomNumberSceneInteractor or RandomNumberScenePresenter
 
@@ -48,7 +48,7 @@ extension RandomNumberViewController {
 //        return self.viewModel as? RandomNumberSceneInteractor
 //    }
 
-    public var presenter: RandomNumberScenePresenter? {
-        return self.viewModel as? RandomNumberScenePresenter
+    public var output: RandomNumberSceneOutput? {
+        return self.viewModel as? RandomNumberSceneOutput
     }
 }

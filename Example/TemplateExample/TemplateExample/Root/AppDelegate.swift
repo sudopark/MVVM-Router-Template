@@ -10,11 +10,11 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let diContainer: DIContainers
+    let diContainer: DependencyInjector
     let viewModel: ApplicationRootViewModel
     
     override init() {
-        self.diContainer = DIContainers()
+        self.diContainer = DependencyInjector()
         let router = ApplicationRootRouter(nextSceneBuilders: self.diContainer)
         self.viewModel = ApplicationRootViewModelImple(router: router)
     }

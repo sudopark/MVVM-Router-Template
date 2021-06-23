@@ -1,5 +1,5 @@
 //
-//  DIContainers.swift
+//  DependencyInjector.swift
 //  MVVM-Router-Template
 //
 //  Created by ParkHyunsoo on 2021/04/23.
@@ -9,11 +9,11 @@
 import Foundation
 
 
-// MARK: - DIContainers
+// MARK: - DependencyInjector
 
-public final class DIContainers {
+public final class DependencyInjector {
     
     
 }
 
-extension DIContainers: EmptyBuilder { }
+extension DependencyInjector: EmptyBuilder { }

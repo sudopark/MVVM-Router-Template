@@ -32,7 +32,7 @@
 		F6E45E4F2669AF10006B1282 /* EmptyFinalBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E45E4A2669AF10006B1282 /* EmptyFinalBuilder.swift */; };
 		F6E45E502669AF10006B1282 /* EmptyFinalScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E45E4B2669AF10006B1282 /* EmptyFinalScene.swift */; };
 		F6E45E512669AF10006B1282 /* EmptyFinalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E45E4C2669AF10006B1282 /* EmptyFinalViewModel.swift */; };
-		F6E45E582669B0F1006B1282 /* DIContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E45E522669B0F1006B1282 /* DIContainers.swift */; };
+		F6E45E582669B0F1006B1282 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E45E522669B0F1006B1282 /* DependencyInjector.swift */; };
 		F6E45E592669B0F1006B1282 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E45E532669B0F1006B1282 /* BaseViewController.swift */; };
 		F6E45E5A2669B0F1006B1282 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E45E542669B0F1006B1282 /* Routable.swift */; };
 		F6E45E5B2669B0F1006B1282 /* Sceneable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E45E552669B0F1006B1282 /* Sceneable.swift */; };
@@ -66,7 +66,7 @@
 		F6E45E4A2669AF10006B1282 /* EmptyFinalBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFinalBuilder.swift; sourceTree = "<group>"; };
 		F6E45E4B2669AF10006B1282 /* EmptyFinalScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFinalScene.swift; sourceTree = "<group>"; };
 		F6E45E4C2669AF10006B1282 /* EmptyFinalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyFinalViewModel.swift; sourceTree = "<group>"; };
-		F6E45E522669B0F1006B1282 /* DIContainers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainers.swift; sourceTree = "<group>"; };
+		F6E45E522669B0F1006B1282 /* DependencyInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
 		F6E45E532669B0F1006B1282 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F6E45E542669B0F1006B1282 /* Routable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		F6E45E552669B0F1006B1282 /* Sceneable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sceneable.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				F6E45E532669B0F1006B1282 /* BaseViewController.swift */,
-				F6E45E522669B0F1006B1282 /* DIContainers.swift */,
+				F6E45E522669B0F1006B1282 /* DependencyInjector.swift */,
 				F6E45E562669B0F1006B1282 /* EmptyBuilder.swift */,
 				F6E45E572669B0F1006B1282 /* Presenting.swift */,
 				F6E45E542669B0F1006B1282 /* Routable.swift */,
@@ -274,7 +274,7 @@
 				F6E45E0626699E91006B1282 /* ApplicationRootRouter.swift in Sources */,
 				F6E45E1E2669A09D006B1282 /* DetailRepository.swift in Sources */,
 				F6E45E5A2669B0F1006B1282 /* Routable.swift in Sources */,
-				F6E45E582669B0F1006B1282 /* DIContainers.swift in Sources */,
+				F6E45E582669B0F1006B1282 /* DependencyInjector.swift in Sources */,
 				F6E45E272669A12C006B1282 /* RandomNumberScene.swift in Sources */,
 				F6E45E282669A12C006B1282 /* RandomNumberViewModel.swift in Sources */,
 				F6E45E242669A12C006B1282 /* RandomNumberRouter.swift in Sources */,
