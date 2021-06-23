@@ -4,6 +4,8 @@
 
 import UIKit
 
+import CommonPresenting
+
 
 // MARK: - Builder + DependencyInjector Extension
 

@@ -7,6 +7,9 @@ import Foundation
 import RxSwift
 import RxRelay
 
+import Domain
+import CommonPresenting
+
 
 // MARK: - ___VARIABLE_sceneName:identifier___ViewModel
 
