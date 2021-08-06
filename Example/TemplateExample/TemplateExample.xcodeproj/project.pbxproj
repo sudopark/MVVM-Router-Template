@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F688F9D226BDAAB100DBB10A /* AutoCompletable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F688F9D126BDAAB100DBB10A /* AutoCompletable.swift */; };
 		F6E45DD826699DAC006B1282 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E45DD726699DAC006B1282 /* AppDelegate.swift */; };
 		F6E45DE126699DAD006B1282 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6E45DE026699DAD006B1282 /* Assets.xcassets */; };
 		F6E45DE426699DAD006B1282 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6E45DE226699DAD006B1282 /* LaunchScreen.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F688F9D126BDAAB100DBB10A /* AutoCompletable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompletable.swift; sourceTree = "<group>"; };
 		F6E45DD426699DAC006B1282 /* TemplateExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6E45DD726699DAC006B1282 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6E45DE026699DAD006B1282 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		F6E45DEB26699DDA006B1282 /* RequireComponents */ = {
 			isa = PBXGroup;
 			children = (
+				F688F9D126BDAAB100DBB10A /* AutoCompletable.swift */,
 				F6E45E532669B0F1006B1282 /* BaseViewController.swift */,
 				F6E45E522669B0F1006B1282 /* DependencyInjector.swift */,
 				F6E45E562669B0F1006B1282 /* EmptyBuilder.swift */,
@@ -277,6 +280,7 @@
 				F6E45E582669B0F1006B1282 /* DependencyInjector.swift in Sources */,
 				F6E45E272669A12C006B1282 /* RandomNumberScene.swift in Sources */,
 				F6E45E282669A12C006B1282 /* RandomNumberViewModel.swift in Sources */,
+				F688F9D226BDAAB100DBB10A /* AutoCompletable.swift in Sources */,
 				F6E45E242669A12C006B1282 /* RandomNumberRouter.swift in Sources */,
 				F6E45E252669A12C006B1282 /* RandomNumberViewController.swift in Sources */,
 				F6E45E1426699F71006B1282 /* MainRouter.swift in Sources */,

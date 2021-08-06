@@ -34,7 +34,8 @@ sudo swift install.swift
 
 4. **YourSceneName**ViewModel
    - owns **YourSceneName**Router and send message
-   - (optional) conform **YourSceneName**Scene Input, Output
+   - (Optional) conform **YourSceneName**Scene Input, Output
+   - (Recommended) When subscribing to the output of another scene in one scene, use the AutoCompletable property wrapper to end the subscription when the scene is deinited.
 
      
 

@@ -38,11 +38,12 @@ public final class RandomNumberViewModelImple: RandomNumberViewModel {
     
     deinit {
         LeakDetector.instance.expectDeallocate(object: self.router)
+        LeakDetector.instance.expectDeallocate(object: self.subjects)
     }
     
     fileprivate final class Subjects {
         
-        let randNumber = PublishSubject<Int>()
+        @AutoCompletable var randNumber = PublishSubject<Int>()
     }
     
     private let subjects = Subjects()

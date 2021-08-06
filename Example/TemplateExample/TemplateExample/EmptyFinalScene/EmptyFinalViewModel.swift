@@ -38,6 +38,7 @@ public final class EmptyFinalViewModelImple: EmptyFinalViewModel {
     
     deinit {
         LeakDetector.instance.expectDeallocate(object: self.router)
+        LeakDetector.instance.expectDeallocate(object: self.subjects)
     }
     
     fileprivate final class Subjects {

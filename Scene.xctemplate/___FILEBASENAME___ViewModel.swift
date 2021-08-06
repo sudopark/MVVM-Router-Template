@@ -34,6 +34,7 @@ public final class ___VARIABLE_sceneName___ViewModelImple: ___VARIABLE_sceneName
     
     deinit {
         LeakDetector.instance.expectDeallocate(object: self.router)
+        LeakDetector.instance.expectDeallocate(object: self.subjects)
     }
     
     fileprivate final class Subjects {

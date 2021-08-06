@@ -14,7 +14,7 @@ import RxCocoa
 
 // MARK: - RandomNumberScene Input & Output
 
-//public protocol RandomNumberSceneInput { }
+public protocol RandomNumberSceneInput { }
 //
 public protocol RandomNumberSceneOutput {
     
@@ -26,27 +26,27 @@ public protocol RandomNumberSceneOutput {
 
 public protocol RandomNumberScene: Scenable {
     
-//    var input: RandomNumberSceneInput? { get }
-//
+    var input: RandomNumberSceneInput? { get }
+
     var output: RandomNumberSceneOutput? { get }
 }
 
 
-// MARK: - RandomNumberViewModel conform RandomNumberSceneInteractor or RandomNumberScenePresenter
+// MARK: - RandomNumberViewModel conform RandomNumberSceneInput and RandomNumberSceneOutput
 
-//extension RandomNumberViewModelImple: RandomNumberSceneInteractor {
-//
-//}
-//
+extension RandomNumberViewModelImple: RandomNumberSceneInput {
+
+}
+
 extension RandomNumberViewModelImple: RandomNumberSceneOutput { }
 
-// MARK: - RandomNumberViewController provide RandomNumberSceneInteractor or RandomNumberScenePresenter
+// MARK: - RandomNumberViewController provide RandomNumberSceneInput and RandomNumberSceneOutput
 
 extension RandomNumberViewController {
 
-//    public var interactor: RandomNumberSceneInteractor? {
-//        return self.viewModel as? RandomNumberSceneInteractor
-//    }
+    public var input: RandomNumberSceneInput? {
+        return self.viewModel as? RandomNumberSceneInput
+    }
 
     public var output: RandomNumberSceneOutput? {
         return self.viewModel as? RandomNumberSceneOutput

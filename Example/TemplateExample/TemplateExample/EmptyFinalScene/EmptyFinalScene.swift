@@ -12,42 +12,42 @@ import RxSwift
 import RxCocoa
 
 
-// MARK: - EmptyFinalScene Interactor & Presenter
+// MARK: - EmptyFinalScene Input & Output
 
-//public protocol EmptyFinalSceneInteractor { }
-//
-//public protocol EmptyFinalScenePresenter { }
+public protocol EmptyFinalSceneInput { }
+
+public protocol EmptyFinalSceneOutput { }
 
 
 // MARK: - EmptyFinalScene
 
 public protocol EmptyFinalScene: Scenable {
     
-//    var interactor: EmptyFinalSceneInteractor? { get }
+    var input: EmptyFinalSceneInput? { get }
 //
-//    var presenter: EmptyFinalScenePresenter? { get }
+    var output: EmptyFinalSceneOutput? { get }
 }
 
 
-// MARK: - EmptyFinalViewModelImple conform EmptyFinalSceneInteractor or EmptyFinalScenePresenter
+// MARK: - EmptyFinalViewModelImple conform EmptyFinalSceneInput and EmptyFinalSceneOutput
 
-//extension EmptyFinalViewModelImple: EmptyFinalSceneInteractor {
-//
-//}
-//
-//extension EmptyFinalViewModelImple: EmptyFinalScenePresenter {
-//
-//}
+extension EmptyFinalViewModelImple: EmptyFinalSceneInput {
 
-// MARK: - EmptyFinalViewController provide EmptyFinalSceneInteractor or EmptyFinalScenePresenter
+}
 
-//extension EmptyFinalViewController {
-//
-//    public var interactor: EmptyFinalSceneInteractor? {
-//        return self.viewModel as? EmptyFinalSceneInteractor
-//    }
-//
-//    public var presenter: EmptyFinalScenePresenter? {
-//        return self.viewModel as? EmptyFinalScenePresenter
-//    }
-//}
+extension EmptyFinalViewModelImple: EmptyFinalSceneOutput {
+
+}
+
+// MARK: - EmptyFinalViewController provide EmptyFinalSceneInput and EmptyFinalSceneOutput
+
+extension EmptyFinalViewController {
+
+    public var input: EmptyFinalSceneInput? {
+        return self.viewModel as? EmptyFinalSceneInput
+    }
+
+    public var output: EmptyFinalSceneOutput? {
+        return self.viewModel as? EmptyFinalSceneOutput
+    }
+}

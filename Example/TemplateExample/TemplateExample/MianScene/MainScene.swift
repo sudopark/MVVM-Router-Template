@@ -12,42 +12,42 @@ import RxSwift
 import RxCocoa
 
 
-// MARK: - MainScene Interactor & Presenter
+// MARK: - MainScene Input & Output
 
-//public protocol MainSceneInteractor { }
-//
-//public protocol MainScenePresenter { }
+public protocol MainSceneInput { }
+
+public protocol MainSceneOutput { }
 
 
 // MARK: - MainScene
 
 public protocol MainScene: Scenable {
     
-//    var ineteractor: MainSceneInteractor { get }
-//
-//    var presenter: MainScenePresenter { get }
+    var input: MainSceneInput? { get }
+
+    var output: MainSceneOutput? { get }
 }
 
 
-// MARK: - MainViewModel conform MainSceneInteractor or MainScenePresenter
+// MARK: - MainViewModel conform MainSceneInput and MainSceneOutput
 
-//extension MainViewModelImple: MainSceneInteractor {
-//
-//}
-//
-//extension MainViewModelImple: MainScenePresenter {
-//
-//}
+extension MainViewModelImple: MainSceneInput {
 
-// MARK: - MainViewController provide MainSceneInteractor or MainScenePresenter
+}
 
-//extension MainViewController {
-//
-//    public var ineteractor: MainSceneInteractor {
-//        return self.viewModel
-//    }
-//
-//    public var presenter: MainScenePresenter {
-//        return self.viewModel
-//    }
-//}
+extension MainViewModelImple: MainSceneOutput {
+
+}
+
+// MARK: - MainViewController provide MainSceneInput and MainSceneOutput
+
+extension MainViewController {
+
+    public var input: MainSceneInput? {
+        return self.viewModel as? MainSceneInput
+    }
+
+    public var output: MainSceneOutput? {
+        return self.viewModel as? MainSceneOutput
+    }
+}
