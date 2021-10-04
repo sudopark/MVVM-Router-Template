@@ -27,9 +27,12 @@ public protocol ___VARIABLE_sceneName___ViewModel: AnyObject {
 public final class ___VARIABLE_sceneName___ViewModelImple: ___VARIABLE_sceneName___ViewModel {
     
     private let router: ___VARIABLE_sceneName___Routing
+    private weak var listener: ___VARIABLE_sceneName___SceneListenable?
     
-    public init(router: ___VARIABLE_sceneName___Routing) {
+    public init(router: ___VARIABLE_sceneName___Routing,
+                listener: ___VARIABLE_sceneName___SceneListenable?) {
         self.router = router
+        self.listener = listener
     }
     
     deinit {

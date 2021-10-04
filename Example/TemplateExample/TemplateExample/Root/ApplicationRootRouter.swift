@@ -37,7 +37,7 @@ extension ApplicationRootRouter {
     // ApplicationRootRouting implements
     public func setupMain() {
         
-        guard let main = self.nextScenesBuilder?.makeMainScene() else { return }
+        guard let main = self.nextScenesBuilder?.makeMainScene(listener: nil) else { return }
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window.backgroundColor = .clear
         self.window.isHidden = false

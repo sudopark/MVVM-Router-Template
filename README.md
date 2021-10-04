@@ -30,12 +30,12 @@ sudo swift install.swift
 
    - **YourSceneName**ViewController: conforms **YourSceneName**Scene
    - **YourSceneName**ViewController: owns **YourSceneName**ViewModel
-   - (optional) provide **YourSceneName**Scene Interactor, Presenter or Interactor & Presenter
+   - provide **YourSceneName**Scene Interactor
 
 4. **YourSceneName**ViewModel
    - owns **YourSceneName**Router and send message
-   - (Optional) conform **YourSceneName**Scene Input, Output
-   - (Recommended) When subscribing to the output of another scene in one scene, use the AutoCompletable property wrapper to end the subscription when the scene is deinited.
+   - conform **YourSceneName**SceneInteractable
+   - (optional) conform next scene's Listenable protocol
 
      
 
@@ -44,10 +44,11 @@ sudo swift install.swift
 - [Example Project](https://github.com/sudopark/MVVM-Router-Template/tree/master/Example/TemplateExample)
 - ApplicationRouter -> Make and route to MainScene
 - MainScene
-    -  Route to RandomNumberScene + subscribe RandomNumberScenePresenter.newRandNumber
+    -  Route to RandomNumberScene
     -  Route to EmptyFinalScene
 - RandomNumberScene
     -  make random number and present
+    -  Send new rand number generated message to MainScene via RandomNumberSceneListenable
 - FinalScene -> do nothing
 
 

@@ -29,9 +29,12 @@ public protocol MainViewModel: AnyObject {
 public final class MainViewModelImple: MainViewModel {
     
     private let router: MainRouting
+    private weak var listener: MainSceneListenable?
     
-    public init(router: MainRouting) {
+    public init(router: MainRouting,
+                listener: MainSceneListenable?) {
         self.router = router
+        self.listener = listener
     }
     
     deinit {
@@ -53,20 +56,9 @@ public final class MainViewModelImple: MainViewModel {
 extension MainViewModelImple {
     
     public func showRandomNumber() {
-        
-        guard let RandomNumberPresenter = self.router.showRandomNumber() else { return }
-        self.bindRandomNumberScenPresentEvent(RandomNumberPresenter)
+        self.router.showRandomNumber()
     }
-    
-    private func bindRandomNumberScenPresentEvent(_ presenter: RandomNumberSceneOutput) {
-        
-        presenter.newRandNumber
-            .subscribe(onNext: { number in
-                print("rand number from RandomNumber scene: \(number)")
-            })
-            .disposed(by: self.disposeBag)
-    }
-    
+
     public func showEmptyFinalScene() {
         self.router.showEmptyScene("dummy")
     }
@@ -77,4 +69,14 @@ extension MainViewModelImple {
 
 extension MainViewModelImple {
     
+}
+
+
+// MARK: - MainViewModelImple + RandomNumberSceneListenable
+
+extension MainViewModelImple: RandomNumberSceneListenable {
+    
+    public func newRandNumberMade(_ newValue: Int) {
+        print("rand number from RandomNumber scene: \(newValue)")
+    }
 }

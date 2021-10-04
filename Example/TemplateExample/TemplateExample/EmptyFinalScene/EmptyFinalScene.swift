@@ -2,7 +2,7 @@
 //  EmptyFinalScene.swift
 //  TemplateExample
 //
-//  Created sudo.park on 2021/06/04.
+//  Created sudo.park on 2021/10/04.
 //  Copyright © 2021 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
@@ -12,42 +12,33 @@ import RxSwift
 import RxCocoa
 
 
-// MARK: - EmptyFinalScene Input & Output
+// MARK: - EmptyFinalScene Interactable & Listenable
 
-public protocol EmptyFinalSceneInput { }
+public protocol EmptyFinalSceneInteractable { }
 
-public protocol EmptyFinalSceneOutput { }
+public protocol EmptyFinalSceneListenable: AnyObject { }
 
 
 // MARK: - EmptyFinalScene
 
 public protocol EmptyFinalScene: Scenable {
     
-    var input: EmptyFinalSceneInput? { get }
-//
-    var output: EmptyFinalSceneOutput? { get }
+    var interactor: EmptyFinalSceneInteractable? { get }
 }
 
 
-// MARK: - EmptyFinalViewModelImple conform EmptyFinalSceneInput and EmptyFinalSceneOutput
+// MARK: - EmptyFinalViewModelImple conform EmptyFinalSceneInteractor
 
-extension EmptyFinalViewModelImple: EmptyFinalSceneInput {
-
-}
-
-extension EmptyFinalViewModelImple: EmptyFinalSceneOutput {
+extension EmptyFinalViewModelImple: EmptyFinalSceneInteractable {
 
 }
 
-// MARK: - EmptyFinalViewController provide EmptyFinalSceneInput and EmptyFinalSceneOutput
+
+// MARK: - EmptyFinalViewController provide EmptyFinalSceneInteractor
 
 extension EmptyFinalViewController {
 
-    public var input: EmptyFinalSceneInput? {
-        return self.viewModel as? EmptyFinalSceneInput
-    }
-
-    public var output: EmptyFinalSceneOutput? {
-        return self.viewModel as? EmptyFinalSceneOutput
+    public var interactor: EmptyFinalSceneInteractable? {
+        return self.viewModel as? EmptyFinalSceneInteractable
     }
 }

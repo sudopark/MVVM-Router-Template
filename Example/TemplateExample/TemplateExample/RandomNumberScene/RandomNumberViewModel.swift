@@ -30,10 +30,14 @@ public final class RandomNumberViewModelImple: RandomNumberViewModel {
     
     private let repository: RandomNumberRepository
     private let router: RandomNumberRouting
+    private weak var listener: RandomNumberSceneListenable?
     
-    public init(repository: RandomNumberRepository, router: RandomNumberRouting) {
+    public init(repository: RandomNumberRepository,
+                router: RandomNumberRouting,
+                listener: RandomNumberSceneListenable?) {
         self.repository = repository
         self.router = router
+        self.listener = listener
     }
     
     deinit {
@@ -43,7 +47,7 @@ public final class RandomNumberViewModelImple: RandomNumberViewModel {
     
     fileprivate final class Subjects {
         
-        @AutoCompletable var randNumber = PublishSubject<Int>()
+        let randNumber = PublishSubject<Int>()
     }
     
     private let subjects = Subjects()
@@ -60,6 +64,7 @@ extension RandomNumberViewModelImple {
         self.repository.loadRandomNumberData { [weak self] number in
             
             self?.subjects.randNumber.onNext(number)
+            self?.listener?.newRandNumberMade(number)
         }
     }
 }

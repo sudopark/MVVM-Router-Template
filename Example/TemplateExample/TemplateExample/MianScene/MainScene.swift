@@ -2,7 +2,7 @@
 //  MainScene.swift
 //  TemplateExample
 //
-//  Created sudo.park on 2021/06/04.
+//  Created sudo.park on 2021/10/04.
 //  Copyright © 2021 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
@@ -12,42 +12,33 @@ import RxSwift
 import RxCocoa
 
 
-// MARK: - MainScene Input & Output
+// MARK: - MainScene Interactable & Listenable
 
-public protocol MainSceneInput { }
+public protocol MainSceneInteractable: RandomNumberSceneListenable, EmptyFinalSceneListenable { }
 
-public protocol MainSceneOutput { }
+public protocol MainSceneListenable: AnyObject { }
 
 
 // MARK: - MainScene
 
 public protocol MainScene: Scenable {
     
-    var input: MainSceneInput? { get }
-
-    var output: MainSceneOutput? { get }
+    var interactor: MainSceneInteractable? { get }
 }
 
 
-// MARK: - MainViewModel conform MainSceneInput and MainSceneOutput
+// MARK: - MainViewModelImple conform MainSceneInteractor
 
-extension MainViewModelImple: MainSceneInput {
-
-}
-
-extension MainViewModelImple: MainSceneOutput {
+extension MainViewModelImple: MainSceneInteractable {
 
 }
 
-// MARK: - MainViewController provide MainSceneInput and MainSceneOutput
+
+// MARK: - MainViewController provide MainSceneInteractor
 
 extension MainViewController {
 
-    public var input: MainSceneInput? {
-        return self.viewModel as? MainSceneInput
-    }
-
-    public var output: MainSceneOutput? {
-        return self.viewModel as? MainSceneOutput
+    public var interactor: MainSceneInteractable? {
+        return self.viewModel as? MainSceneInteractable
     }
 }

@@ -18,15 +18,15 @@ import UIKit
 
 public protocol MainSceneBuilable {
     
-    func makeMainScene() -> MainScene
+    func makeMainScene(listener: MainSceneListenable?) -> MainScene
 }
 
 
 extension DependencyInjector: MainSceneBuilable {
     
-    public func makeMainScene() -> MainScene {
+    public func makeMainScene(listener: MainSceneListenable?) -> MainScene {
         let router = MainRouter(nextSceneBuilders: self)
-        let viewModel = MainViewModelImple(router: router)
+        let viewModel = MainViewModelImple(router: router, listener: listener)
         let viewController = MainViewController(viewModel: viewModel)
         router.currentScene = viewController
         return viewController

@@ -18,7 +18,7 @@ import UIKit
 
 public protocol MainRouting: Routing {
     
-    func showRandomNumber() -> RandomNumberSceneOutput?
+    func showRandomNumber()
     
     func showEmptyScene(_ params: String)
 }
@@ -35,14 +35,21 @@ extension MainRouter {
     
     // MainRouting implements
     
-    public func showRandomNumber() -> RandomNumberSceneOutput? {
-        guard let RandomNumberScene = self.nextScenesBuilder?.makeRandomNumberScene() else { return nil }
+    private var currentInteractor: MainSceneInteractable? {
+        return (self.currentScene as? MainScene)?.interactor
+    }
+    
+    public func showRandomNumber() {
+        guard let RandomNumberScene = self.nextScenesBuilder?
+                .makeRandomNumberScene(listener: self.currentInteractor) else {
+            return
+        }
         self.currentScene?.present(RandomNumberScene, animated: true, completion: nil)
-        return RandomNumberScene.output
     }
     
     public func showEmptyScene(_ params: String) {
-        guard let next = self.nextScenesBuilder?.makeEmptyFinalScene(params) else { return }
+        guard let next = self.nextScenesBuilder?
+                .makeEmptyFinalScene(params, listener: self.currentInteractor) else { return }
         self.currentScene?.present(next, animated: true, completion: nil)
     }
 }

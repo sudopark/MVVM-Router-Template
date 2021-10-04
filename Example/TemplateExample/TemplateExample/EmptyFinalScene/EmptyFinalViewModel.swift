@@ -28,10 +28,12 @@ public final class EmptyFinalViewModelImple: EmptyFinalViewModel {
     
     private let params: String
     private let router: EmptyFinalRouting
+    private weak var listener: EmptyFinalSceneListenable?
     
-    public init(params: String, router: EmptyFinalRouting) {
+    public init(params: String, router: EmptyFinalRouting, listener: EmptyFinalSceneListenable?) {
         self.params = params
         self.router = router
+        self.listener = listener
         
         print("runtime parameter: \(params)")
     }

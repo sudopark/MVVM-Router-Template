@@ -2,7 +2,7 @@
 //  RandomNumberScene.swift
 //  TemplateExample
 //
-//  Created sudo.park on 2021/06/04.
+//  Created sudo.park on 2021/10/04.
 //  Copyright © 2021 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
@@ -12,13 +12,13 @@ import RxSwift
 import RxCocoa
 
 
-// MARK: - RandomNumberScene Input & Output
+// MARK: - RandomNumberScene Interactable & Listenable
 
-public protocol RandomNumberSceneInput { }
-//
-public protocol RandomNumberSceneOutput {
+public protocol RandomNumberSceneInteractable { }
+
+public protocol RandomNumberSceneListenable: AnyObject {
     
-    var newRandNumber: Observable<Int> { get }
+    func newRandNumberMade(_ newValue: Int)
 }
 
 
@@ -26,29 +26,22 @@ public protocol RandomNumberSceneOutput {
 
 public protocol RandomNumberScene: Scenable {
     
-    var input: RandomNumberSceneInput? { get }
-
-    var output: RandomNumberSceneOutput? { get }
+    var interactor: RandomNumberSceneInteractable? { get }
 }
 
 
-// MARK: - RandomNumberViewModel conform RandomNumberSceneInput and RandomNumberSceneOutput
+// MARK: - RandomNumberViewModelImple conform RandomNumberSceneInteractor
 
-extension RandomNumberViewModelImple: RandomNumberSceneInput {
+extension RandomNumberViewModelImple: RandomNumberSceneInteractable {
 
 }
 
-extension RandomNumberViewModelImple: RandomNumberSceneOutput { }
 
-// MARK: - RandomNumberViewController provide RandomNumberSceneInput and RandomNumberSceneOutput
+// MARK: - RandomNumberViewController provide RandomNumberSceneInteractor
 
 extension RandomNumberViewController {
 
-    public var input: RandomNumberSceneInput? {
-        return self.viewModel as? RandomNumberSceneInput
-    }
-
-    public var output: RandomNumberSceneOutput? {
-        return self.viewModel as? RandomNumberSceneOutput
+    public var interactor: RandomNumberSceneInteractable? {
+        return self.viewModel as? RandomNumberSceneInteractable
     }
 }

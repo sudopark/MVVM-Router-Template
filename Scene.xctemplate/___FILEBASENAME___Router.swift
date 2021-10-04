@@ -24,4 +24,7 @@ public final class ___VARIABLE_sceneName___Router: Router<___VARIABLE_sceneName_
 extension ___VARIABLE_sceneName___Router {
     
     // ___VARIABLE_sceneName___Routing implements
+    private var currentInteractor: ___VARIABLE_sceneName___SceneInteractable? {
+        return (self.currentScene as? ___VARIABLE_sceneName___Scene)?.interactor
+    }
 }

@@ -18,15 +18,16 @@ import UIKit
 
 public protocol EmptyFinalSceneBuilable {
     
-    func makeEmptyFinalScene(_ params: String) -> EmptyFinalScene
+    func makeEmptyFinalScene(_ params: String, listener: EmptyFinalSceneListenable?) -> EmptyFinalScene
 }
 
 
 extension DependencyInjector: EmptyFinalSceneBuilable {
     
-    public func makeEmptyFinalScene(_ params: String) -> EmptyFinalScene {
+    public func makeEmptyFinalScene(_ params: String,
+                                    listener: EmptyFinalSceneListenable?) -> EmptyFinalScene {
         let router = EmptyFinalRouter(nextSceneBuilders: self)
-        let viewModel = EmptyFinalViewModelImple(params: params, router: router)
+        let viewModel = EmptyFinalViewModelImple(params: params, router: router, listener: listener)
         let viewController = EmptyFinalViewController(viewModel: viewModel)
         router.currentScene = viewController
         return viewController

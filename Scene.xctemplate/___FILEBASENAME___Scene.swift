@@ -12,42 +12,33 @@ import RxSwift
 import RxCocoa
 
 
-// MARK: - ___VARIABLE_sceneName___Scene Input & Output
+// MARK: - ___VARIABLE_sceneName___Scene Interactable & Listenable
 
-public protocol ___VARIABLE_sceneName___SceneInput { }
+public protocol ___VARIABLE_sceneName___SceneInteractable { }
 
-public protocol ___VARIABLE_sceneName___SceneOutput { }
+public protocol ___VARIABLE_sceneName___SceneListenable: AnyObject { }
 
 
 // MARK: - ___VARIABLE_sceneName___Scene
 
 public protocol ___VARIABLE_sceneName___Scene: Scenable {
     
-    var input: ___VARIABLE_sceneName___SceneInput? { get }
-
-    var output: ___VARIABLE_sceneName___SceneOutput? { get }
+    var interactor: ___VARIABLE_sceneName___SceneInteractable? { get }
 }
 
 
-// MARK: - ___VARIABLE_sceneName___ViewModelImple conform ___VARIABLE_sceneName___SceneInput and ___VARIABLE_sceneName___SceneOutput
+// MARK: - ___VARIABLE_sceneName___ViewModelImple conform ___VARIABLE_sceneName___SceneInteractor
 
-extension ___VARIABLE_sceneName___ViewModelImple: ___VARIABLE_sceneName___SceneInput {
-
-}
-
-extension ___VARIABLE_sceneName___ViewModelImple: ___VARIABLE_sceneName___SceneOutput {
+extension ___VARIABLE_sceneName___ViewModelImple: ___VARIABLE_sceneName___SceneInteractable {
 
 }
 
-// MARK: - ___VARIABLE_sceneName___ViewController provide ___VARIABLE_sceneName___SceneInput and ___VARIABLE_sceneName___SceneOutput
+
+// MARK: - ___VARIABLE_sceneName___ViewController provide ___VARIABLE_sceneName___SceneInteractor
 
 extension ___VARIABLE_sceneName___ViewController {
 
-    public var input: ___VARIABLE_sceneName___SceneInput? {
-        return self.viewModel as? ___VARIABLE_sceneName___SceneInput
-    }
-
-    public var output: ___VARIABLE_sceneName___SceneOutput? {
-        return self.viewModel as? ___VARIABLE_sceneName___SceneOutput
+    public var interactor: ___VARIABLE_sceneName___SceneInteractable? {
+        return self.viewModel as? ___VARIABLE_sceneName___SceneInteractable
     }
 }
