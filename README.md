@@ -11,6 +11,8 @@ sudo swift install.swift
 
 
 ## Generated files
+![스크린샷 2021-12-16 오후 11 55 26](https://user-images.githubusercontent.com/56535651/146394809-86c5382a-b1f3-4e4e-9f4b-4ed4db634366.png)
+
 
 1. **YourSceneName**Scene: conforms Scenable and represents UIViewController
 
