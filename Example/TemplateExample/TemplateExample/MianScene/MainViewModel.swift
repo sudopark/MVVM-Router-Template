@@ -74,7 +74,7 @@ extension MainViewModelImple {
 
 // MARK: - MainViewModelImple + RandomNumberSceneListenable
 
-extension MainViewModelImple: RandomNumberSceneListenable {
+extension MainViewModelImple {
     
     public func newRandNumberMade(_ newValue: Int) {
         print("rand number from RandomNumber scene: \(newValue)")
