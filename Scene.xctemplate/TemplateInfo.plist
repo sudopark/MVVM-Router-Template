@@ -74,6 +74,7 @@
 			<key>Type</key>
 			<string>static</string>
 		</dict>
+		<dict/>
 		<dict>
 			<key>Default</key>
 			<string>___VARIABLE_sceneName:identifier___ViewController</string>
@@ -87,6 +88,20 @@
 			<true/>
 			<key>Type</key>
 			<string>static</string>
+		</dict>
+		<dict>
+			<key>Default</key>
+			<false/>
+			<key>Description</key>
+			<string>use swiftUI or not</string>
+			<key>Identifier</key>
+			<string>SwiftUI</string>
+			<key>Name</key>
+			<string>use SwiftUI</string>
+			<key>Required</key>
+			<false/>
+			<key>Type</key>
+			<string>checkbox</string>
 		</dict>
 	</array>
 	<key>Platforms</key>
