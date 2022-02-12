@@ -9,6 +9,9 @@ import SwiftUI
 import RxSwift
 import RxCocoa
 
+import Domain
+import CommonPresenting
+
 
 // MARK: - ___VARIABLE_sceneName___ViewController
 
